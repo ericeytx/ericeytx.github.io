@@ -1,0 +1,211 @@
+{
+  "meta": {
+    "title": "Eric Eysermans | Full Stack Web Developer",
+    "description": "Full Stack Web Developer specializing in .NET & Azure, modern web and cross-platform mobile development, and practical AI/ML integration.",
+    "favicon": "💻"
+  },
+  "person": {
+    "name": "Eric Eysermans",
+    "title": "Full Stack Web Developer",
+    "tagline": ".NET & Azure · Full Stack Web · AI/ML Integration",
+    "heroTagline": "Building software that makes everyday work faster, simpler, and a little more human.",
+    "location": "Denton, Texas",
+    "linkedin": "https://www.linkedin.com/in/ericeysermans/",
+    "summary": "Full stack web developer and engineering leader with 20+ years in .NET, Azure, and process automation, building software that makes everyday work faster and easier. From modern web and cross-platform mobile to pragmatic AI/ML, I've delivered solutions across engineering & manufacturing, accounting & finance, and sales & marketing—favoring clean architecture, maintainable code, and close collaboration."
+  },
+  "highlights": [
+    { "label": "Years in Tech", "value": "20+" },
+    { "label": "Core Stack", "value": ".NET" },
+    { "label": "Cloud", "value": "Azure" },
+    { "label": "Focus", "value": "AI/ML" }
+  ],
+  "skills": [
+    {
+      "category": "Languages & Frameworks",
+      "items": ["C# / .NET", "Blazor", "ASP.NET / Minimal API", ".NET MAUI", "JavaScript", "Python", "PowerShell", "SASS", "Bootstrap", "Fluxor / Redux"]
+    },
+    {
+      "category": "Cloud & DevOps",
+      "items": ["Microsoft Azure", "Azure CI/CD Pipelines", "Git", "Cross-Platform Mobile (iOS / Android)", "UI/UX Standards"]
+    },
+    {
+      "category": "Data & Databases",
+      "items": ["SQL Server", "SQLite", "Database Design", "Stored Procedures", "ETL Pipelines", "SSRS Reporting", "Performance Tuning"]
+    },
+    {
+      "category": "AI / ML",
+      "items": ["Microsoft Cognitive Services", "Google ML Kit", "Data Analysis", "Predictive Modeling", "NLTK", "OpenCV", "Local LLM"]
+    },
+    {
+      "category": "Leadership & Practices",
+      "items": ["Technical Leadership", "Team Mentoring", "Development Standards", "Application Modernization", "Agile Delivery"]
+    }
+  ],
+  "portfolio": [
+    {
+      "title": "Standard Motor Products Catalogs",
+      "url": "https://standardbrand.com/ecatalog/",
+      "description": "A multi-brand, feature-rich automotive parts catalog.",
+      "tech": [".NET Blazor", ".NET Minimal API", "SASS", "Bootstrap", "Fluxor", "SQL Server"]
+    },
+    {
+      "title": "This Résumé Page",
+      "url": "https://github.com/ericeytx/ericeytx.github.io",
+      "description": "Vanilla HTML with JavaScript touches.",
+      "tech": ["HTML", "CSS", "JavaScript", "GSAP" ]
+    }
+  ],
+  "experience": [
+    {
+      "company": "Standard Motor Products",
+      "location": "Lewisville, TX",
+      "period": "2022 – Present",
+      "roles": [
+        {
+          "role": "Web Development Manager",
+          "period": "2026 – Present",
+          "current": true,
+          "achievements": [
+            "Lead the corporate web development team across web, mobile, cloud, and ERP specialties, setting technical direction and delivery priorities.",
+            "Drive a company-wide modernization of development practices, keeping a portfolio of enterprise applications current, secure, and maintainable."
+          ],
+          "projects": [
+            {
+              "name": "Multi-Brand Catalog Platform",
+              "description": "Developed a multi-site, multi-brand, customer-facing catalog platform serving customers across multiple product lines.",
+              "tech": [".NET Blazor", ".NET Minimal API", "SASS", "Bootstrap", "Fluxor", "SQL Server"]
+            },
+            {
+              "name": "Corporate Development Standards",
+              "description": "Authored company development standards covering tech stack, library requirements, and design systems, spanning the full project lifecycle from proof-of-concept to production.",
+              "tech": [".NET Blazor", ".NET Minimal API", "CSS", "SQL Server", "RBAC", "Azure Entra ID"]
+            }
+          ]
+        },
+        {
+          "role": "Senior Software Developer",
+          "period": "2022 – 2026",
+          "current": false,
+          "achievements": [
+            "Built and shipped full-stack Blazor applications using JavaScript, Bootstrap, SASS, and Fluxor/Redux.",
+            "Designed new SQL Server databases and optimized existing schemas and stored procedures, improving performance and scalability.",
+            "Established Azure CI/CD pipelines for web and mobile applications and their supporting services, streamlining release cycles.",
+            "Delivered targeted data solutions, including automated geolocation of customer addresses to power mapping features."
+          ],
+          "projects": [
+            {
+              "name": "Internal Sales Force CRM Mobile App",
+              "description": "Delivered a cross-platform mobile CRM app adopted by the North America sales force.",
+              "tech": [".NET MAUI", "Telerik", "Microsoft Cognitive Services", "iOS", "Android", "Azure MSAL"]
+            },
+            {
+              "name": "SMP Parts Mobile App",
+              "description": "Delivered a public-facing cross-platform mobile catalog app released on iOS and Android.",
+              "tech": [".NET MAUI", "Telerik", "Google ML Kit", "iOS", "Android"]
+            },
+            {
+              "name": "Code Generation",
+              "description": "Co-authored a flexible code-generation platform that accelerated and standardized the development of new applications.",
+              "tech": [".NET Blazor", ".NET MAUI", "Telerik", "SQL Server"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "company": "Mayday Manufacturing",
+      "location": "Denton, TX",
+      "period": "2006 – 2022",
+      "roles": [
+        {
+          "role": "Systems Analyst / Developer",
+          "period": "2016 – 2022",
+          "current": false,
+          "achievements": [
+            "Served as technical lead for a cross-functional team of developers, application administrators, and business analysts.",
+            "Developed SQL Server stored procedures, functions, views, triggers, and access controls powering applications, SSRS reports, and RPA processes.",
+            "Applied a broad range of languages, tools, and analysis libraries to business data analysis, including estimation performance metrics and a percentage-of-completion revenue recognition finance model."
+          ],
+          "projects": [
+            {
+              "name": "Warehouse Management System",
+              "description": "Designed and delivered a complete warehouse management system with direct integration into the Made2Manage ERP.",
+              "tech": [".NET WPF", "ASP.NET API", "SQL Server"]
+            },
+            {
+              "name": "Made2Manage ERP Upgrade",
+              "description": "Led major Made2Manage ERP upgrades—redeploying custom SSRS reports, resolving business and performance issues, and mentoring a junior analyst into an ERP administrator role.",
+              "tech": ["SSRS", "SQL Server"]
+            },
+            {
+              "name": "Demand Schedule ETL Pipeline",
+              "description": "Built ETL pipelines to load demand schedules from customer portals into SQL Server, improving reporting accuracy and responsiveness to order changes.",
+              "tech": ["SSRS", "SQL Server"]
+            }
+          ]
+        },
+        {
+          "role": "Process Automation Developer",
+          "period": "2006 – 2016",
+          "current": false,
+          "achievements": [
+            "Served as technology specialist for manufacturing services and the process engineering/improvement team, building application-based solutions for manufacturing and business operations."
+          ],
+          "projects": [
+            {
+              "name": "Manufacturing Plan Generator",
+              "description": "Designed and co-developed an engineering application that combines product dimensional and quality requirements with internal practices to generate complete manufacturing plans, and migrated product dimensional and manufacturing data to SQL Server for analysis and reuse.",
+              "tech": [".NET WPF", "SQL Server"]
+            },
+            {
+              "name": "Process Simulation Libraries",
+              "description": "Designed and developed high-detail manufacturing process simulation libraries that replaced legacy business logic in existing estimating software and set new operational benchmarks.",
+              "tech": [".NET", "SQL Server"]
+            },
+            {
+              "name": "Parametric Machine Programming",
+              "description": "Created parametric interfaces to efficiently program CNC lathes and mills, coordinate measuring machines, and other precision equipment.",
+              "tech": [".NET", "SQL Server"]
+            },
+            {
+              "name": "Automated Metrology Integration",
+              "description": "Led Mayday's transition to automated metrology.  Project included equipment specification, capital purchasing, tooling design, and custom software development and integrations.",
+              "tech": [".NET", "EtherNet/IP"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "company": "Quality Tool, Inc.",
+      "location": "Lewisville, TX",
+      "period": "2002 – 2006",
+      "enabled": false,
+      "roles": [
+        {
+          "role": "Master Scheduler & Shipping Lead",
+          "period": "02/2002 – 10/2006",
+          "current": false,
+          "achievements": [
+            "Produced the master production schedule for injection molding operations.",
+            "Oversaw order fulfillment, customs documentation, and compliance with automotive and military quality standards.",
+            "Deployed and maintained a small Windows Server–based network."
+          ]
+        }
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "University of North Texas",
+      "credential": "BBA, General Business",
+      "period": "2004 – 2010"
+    }
+  ],
+  "training": [
+    "Cloud Revolution — Microsoft Copilot Platform",
+    "Hexagon Metrology — PC-DMIS CMM Programming",
+    "Scate Learning — CATIA Part Design & Generative Drafting",
+    "Zeiss Calypso — CMM Programming"
+  ]
+}
