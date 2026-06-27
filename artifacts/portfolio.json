@@ -175,24 +175,6 @@
           ]
         }
       ]
-    },
-    {
-      "company": "Quality Tool, Inc.",
-      "location": "Lewisville, TX",
-      "period": "2002 – 2006",
-      "enabled": false,
-      "roles": [
-        {
-          "role": "Master Scheduler & Shipping Lead",
-          "period": "02/2002 – 10/2006",
-          "current": false,
-          "achievements": [
-            "Produced the master production schedule for injection molding operations.",
-            "Oversaw order fulfillment, customs documentation, and compliance with automotive and military quality standards.",
-            "Deployed and maintained a small Windows Server–based network."
-          ]
-        }
-      ]
     }
   ],
   "education": [
