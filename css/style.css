@@ -223,7 +223,6 @@ a:hover { color: var(--accent-2); }
   justify-content: center;
   padding: calc(var(--nav-height) + 2rem) 0 5rem;
   position: relative;
-  overflow: hidden;
 }
 
 #hero::before {
