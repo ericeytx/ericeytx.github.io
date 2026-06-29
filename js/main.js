@@ -280,7 +280,7 @@ function renderExperience(data) {
       roleEntry.className = 'role-entry';
 
       const projectsHtml = role.projects && role.projects.length > 0
-        ? `<div class="projects-list">
+        ? `<div class="projects-list" data-count="${role.projects.length}">
              ${role.projects.map(project => `
                <div class="project-card">
                  <div class="project-name">${project.name}</div>

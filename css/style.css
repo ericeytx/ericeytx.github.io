@@ -687,6 +687,16 @@ section {
   gap: 1.25rem 1.75rem;
 }
 
+/* Even number of projects: organize into a balanced two-column grid
+   so the last row is never left with a single orphan card. */
+.projects-list[data-count="2"],
+.projects-list[data-count="4"],
+.projects-list[data-count="6"],
+.projects-list[data-count="8"],
+.projects-list[data-count="10"] {
+  grid-template-columns: repeat(2, minmax(240px, 1fr));
+}
+
 .project-card {
   padding: 0 0 0 1rem;
   border-left: 2px solid var(--line);
@@ -992,20 +1002,16 @@ a.portfolio-card:hover .portfolio-link {
 }
 
 .edu-item {
-  padding: 1.1rem 1.25rem;
-  margin-bottom: 1rem;
-  background: var(--bg);
-  border: 1px solid var(--line-soft);
-  border-radius: var(--radius);
-  transition: border-color var(--transition-fast), background var(--transition-fast);
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--line-soft);
 }
 
-.edu-item:hover {
-  border-color: var(--line);
-  background: var(--bg-card);
+.edu-item:first-of-type {
+  padding-top: 0;
+  border-top: none;
 }
 
-.edu-item:last-child { margin-bottom: 0; }
+.edu-item:last-child { padding-bottom: 0; }
 
 .edu-institution {
   font-weight: 600;
@@ -1362,7 +1368,8 @@ footer p {
     grid-template-columns: 1fr;
   }
 
-  .projects-list {
+  .projects-list,
+  .projects-list[data-count] {
     grid-template-columns: 1fr;
   }
 

@@ -72,7 +72,7 @@
           "projects": [
             {
               "name": "Multi-Brand Catalog Platform",
-              "description": "Developed a multi-site, multi-brand, customer-facing catalog platform serving customers across multiple product lines.",
+              "description": "Developed a multi-site, multi-brand, customer-facing catalog platform to a provided design, serving customers across multiple product lines.",
               "tech": [".NET Blazor", ".NET Minimal API", "SASS", "Bootstrap", "Fluxor", "SQL Server"]
             },
             {
@@ -124,12 +124,12 @@
           "achievements": [
             "Served as technical lead for a cross-functional team of developers, application administrators, and business analysts.",
             "Developed SQL Server stored procedures, functions, views, triggers, and access controls powering applications, SSRS reports, and RPA processes.",
-            "Applied a broad range of languages, tools, and analysis libraries to business data analysis, including estimation performance metrics and a percentage-of-completion revenue recognition finance model."
+            "Applied a broad range of languages, tools, and analysis libraries to business data analysis, including estimation performance metrics and financial models."
           ],
           "projects": [
             {
               "name": "Warehouse Management System",
-              "description": "Designed and delivered a complete warehouse management system with direct integration into the Made2Manage ERP.",
+              "description": "Delivered a complete warehouse management system with direct integration into the Made2Manage ERP.",
               "tech": [".NET WPF", "ASP.NET API", "SQL Server"]
             },
             {
@@ -141,6 +141,11 @@
               "name": "Demand Schedule ETL Pipeline",
               "description": "Built ETL pipelines to load demand schedules from customer portals into SQL Server, improving reporting accuracy and responsiveness to order changes.",
               "tech": ["SSRS", "SQL Server"]
+            },
+            {
+              "name": "Revenue Recognition Financial Models",
+              "description": "Authored a comprehensive set of percentage-of-completion revenue recognition financial models.",
+              "tech": ["SSRS", "SQL Server", "Python", "Pandas"]
             }
           ]
         },
@@ -154,12 +159,12 @@
           "projects": [
             {
               "name": "Manufacturing Plan Generator",
-              "description": "Designed and co-developed an engineering application that combines product dimensional and quality requirements with internal practices to generate complete manufacturing plans, and migrated product dimensional and manufacturing data to SQL Server for analysis and reuse.",
+              "description": "Co-developed an engineering application that combines product dimensional and quality requirements with internal practices to generate complete manufacturing plans; migrated product dimensional and manufacturing data to SQL Server for analysis and reuse.",
               "tech": [".NET WPF", "SQL Server"]
             },
             {
               "name": "Process Simulation Libraries",
-              "description": "Designed and developed high-detail manufacturing process simulation libraries that replaced legacy business logic in existing estimating software and set new operational benchmarks.",
+              "description": "Developed high-detail manufacturing process simulation libraries that replaced legacy business logic in existing estimating software and set new operational benchmarks.",
               "tech": [".NET", "SQL Server"]
             },
             {
