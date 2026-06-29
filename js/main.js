@@ -366,9 +366,11 @@ function renderEducation(data) {
 }
 
 function renderContact(data) {
-  const link = document.getElementById('linkedin-link');
   if (data.person.linkedin) {
-    link.href = data.person.linkedin;
+    const link = document.getElementById('linkedin-link');
+    if (link) link.href = data.person.linkedin;
+    const navLink = document.getElementById('nav-linkedin');
+    if (navLink) navLink.href = data.person.linkedin;
   }
 }
 

@@ -172,6 +172,19 @@ a:hover { color: var(--accent-2); }
   background: var(--primary);
 }
 
+.nav-links a.nav-social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem;
+  color: var(--accent-1);
+}
+
+.nav-links a.nav-social:hover {
+  color: var(--bg);
+  background: var(--primary);
+}
+
 /* Mobile nav toggle */
 #nav-toggle {
   display: none;
@@ -1144,12 +1157,19 @@ a.portfolio-card:hover .portfolio-link {
   box-shadow: 0 0 0 3px rgba(250, 246, 233, 0.12);
 }
 
+.h-captcha {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 1.25rem;
+}
+
 .contact-submit {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  padding: 0.95rem 2rem;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 0.95rem 2.5rem;
   font-family: var(--font-body);
   font-size: 0.95rem;
   font-weight: 600;
