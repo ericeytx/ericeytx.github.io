@@ -36,18 +36,30 @@ function initNav() {
     navbar.classList.toggle('scrolled', window.scrollY > 50);
   });
 
+  // Keep the toggle button's ARIA state in sync with the menu's visibility
+  const setNavState = (open) => {
+    links.classList.toggle('open', open);
+    toggle.classList.toggle('active', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+  };
+
   // Mobile toggle
   toggle.addEventListener('click', () => {
-    links.classList.toggle('open');
-    toggle.classList.toggle('active');
+    setNavState(!links.classList.contains('open'));
   });
 
   // Close mobile nav on link click
   navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      links.classList.remove('open');
-      toggle.classList.remove('active');
-    });
+    link.addEventListener('click', () => setNavState(false));
+  });
+
+  // Close the mobile menu with Escape and return focus to the toggle
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && links.classList.contains('open')) {
+      setNavState(false);
+      toggle.focus();
+    }
   });
 
   // Active link on scroll
@@ -89,6 +101,17 @@ function initSmoothScroll() {
 
 // ===== Reveal Animations =====
 function initRevealAnimations() {
+  // Respect users who prefer reduced motion: skip the entrance animations
+  // entirely so GSAP never leaves elements stuck at opacity:0.
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReducedMotion) {
+    document.querySelectorAll('.reveal').forEach(el => {
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+    });
+    return;
+  }
+
   gsap.registerPlugin(ScrollTrigger);
 
   const reveals = document.querySelectorAll('.reveal');
@@ -151,6 +174,9 @@ function initRevealAnimations() {
 // batches for the dynamic elements and refresh ScrollTrigger once rendered.
 function initDynamicAnimations() {
   if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+
+  // Under reduced-motion, leave dynamically-rendered content fully visible.
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
   const batches = [
     { selector: '.skill-category', from: { opacity: 0, y: 30 }, to: { opacity: 1, y: 0, duration: 0.6, stagger: 0.1, ease: 'power2.out' } },
@@ -317,7 +343,7 @@ function renderPortfolio(data) {
 
     const linkHint = item.url
       ? `<span class="portfolio-link">View project
-           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
          </span>`
       : '';
 
