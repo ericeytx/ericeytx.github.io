@@ -94,7 +94,7 @@
           ],
           "projects": [
             {
-              "name": "Internal Sales Force CRM Mobile App",
+              "name": "Internal CRM Mobile App",
               "description": "Delivered a cross-platform mobile CRM app adopted by the North America sales force.",
               "tech": [".NET MAUI", "Telerik", "Microsoft Cognitive Services", "iOS", "Android", "Azure MSAL"]
             },
@@ -158,7 +158,7 @@
           ],
           "projects": [
             {
-              "name": "Manufacturing Plan Generator",
+              "name": "Manufacturing Plan Generation",
               "description": "Co-developed an engineering application that combines product dimensional and quality requirements with internal practices to generate complete manufacturing plans; migrated product dimensional and manufacturing data to SQL Server for analysis and reuse.",
               "tech": [".NET WPF", "SQL Server"]
             },

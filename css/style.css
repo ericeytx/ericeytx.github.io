@@ -325,7 +325,7 @@ a:hover { color: var(--accent-2); }
   color: var(--accent-1);
   line-height: 1.02;
   margin-bottom: 0.85rem;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.01em;
 }
 
 .hero-title {
@@ -487,7 +487,7 @@ section {
   font-size: clamp(2.1rem, 4vw, 2.9rem);
   font-weight: 600;
   color: var(--accent-1);
-  letter-spacing: -0.025em;
+  letter-spacing: 0;
   line-height: 1.12;
   margin-bottom: 0;
   position: relative;
@@ -712,7 +712,7 @@ section {
   font-size: 1.05rem;
   font-weight: 600;
   color: var(--accent-1);
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
   margin-bottom: 0.45rem;
 }
 
@@ -778,7 +778,7 @@ a.portfolio-card:hover {
   font-size: 1.3rem;
   font-weight: 600;
   color: var(--accent-1);
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
   margin-bottom: 0.6rem;
 }
 
@@ -874,7 +874,7 @@ a.portfolio-card:hover .portfolio-link {
   font-size: 1.65rem;
   font-weight: 600;
   color: var(--accent-1);
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
   margin-bottom: 0.25rem;
 }
 
@@ -927,7 +927,7 @@ a.portfolio-card:hover .portfolio-link {
   font-size: 1.2rem;
   font-weight: 600;
   color: var(--secondary);
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
   margin-bottom: 0.2rem;
 }
 
@@ -982,7 +982,7 @@ a.portfolio-card:hover .portfolio-link {
   font-size: 1.25rem;
   font-weight: 600;
   color: var(--accent-1);
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
   margin-bottom: 1.4rem;
   padding-bottom: 0.85rem;
   border-bottom: 1px solid var(--line-soft);
