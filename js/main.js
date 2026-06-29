@@ -70,9 +70,13 @@ function initNav() {
 function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
+      const href = this.getAttribute('href');
+      // Only handle in-page hash links (e.g. "#about"); ignore "#" placeholders
+      // and links whose href is later changed to a full URL (e.g. LinkedIn).
+      if (!href || !href.startsWith('#') || href === '#') return;
+      const target = document.querySelector(href);
       if (target) {
+        e.preventDefault();
         gsap.to(window, {
           duration: 1,
           scrollTo: { y: target, offsetY: 64 },
