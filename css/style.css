@@ -304,8 +304,8 @@ a:hover { color: var(--accent-2); }
   font-family: var(--font-display);
   font-size: clamp(1.3rem, 3vw, 1.85rem);
   font-weight: 400;
-  font-style: italic;
-  color: var(--accent-2);
+  font-style: normal;
+  color: var(--secondary);
   margin-bottom: 1.25rem;
 }
 
@@ -468,7 +468,7 @@ section {
 
 /* ===== About Section ===== */
 #about {
-  background: var(--bg);
+  background: transparent;
 }
 
 .about-card {
@@ -524,7 +524,7 @@ section {
 
 /* ===== Skills Section ===== */
 #skills {
-  background: var(--bg);
+  background: transparent;
 }
 
 .skills-grid {
@@ -619,7 +619,7 @@ section {
 
 /* ===== Experience Section ===== */
 #experience {
-  background: var(--bg);
+  background: transparent;
 }
 
 .timeline {
@@ -702,7 +702,7 @@ section {
 
 /* ===== Portfolio Section ===== */
 #portfolio {
-  background: var(--bg);
+  background: transparent;
 }
 
 .portfolio-grid {
@@ -913,7 +913,7 @@ a.portfolio-card:hover .portfolio-link {
 
 /* ===== Education Section ===== */
 #education {
-  background: var(--bg);
+  background: transparent;
 }
 
 .education-content {
@@ -1032,7 +1032,7 @@ a.portfolio-card:hover .portfolio-link {
 
 /* ===== Contact Section ===== */
 #contact {
-  background: var(--bg);
+  background: transparent;
 }
 
 .contact-card {

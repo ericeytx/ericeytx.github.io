@@ -383,6 +383,16 @@ function initContactForm() {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
+    // Require hCaptcha to be solved before submitting (Web3Forms spam protection)
+    const captchaField = form.querySelector('textarea[name="h-captcha-response"]');
+    if (captchaField && !captchaField.value) {
+      if (status) {
+        status.classList.add('error');
+        status.textContent = 'Please complete the captcha before submitting.';
+      }
+      return;
+    }
+
     if (status) {
       status.classList.remove('error');
       status.textContent = 'Sending…';
