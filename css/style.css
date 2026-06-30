@@ -37,15 +37,31 @@
 html[data-a11y-text="large"]  { font-size: 112.5%; } /* ~18px */
 html[data-a11y-text="larger"] { font-size: 125%;   } /* ~20px */
 
-/* High-contrast control: darkens body/secondary text tokens to push
-   contrast toward AAA while keeping the site's brand palette. */
+/* High-contrast control: collapses the warm brand palette to a strict
+   black-on-white scheme for maximum legibility. Every brown/maroon text
+   token becomes pure black and every section/card surface becomes pure
+   white, so all body copy, headings and accents render as #000 on #FFF. */
 html[data-a11y-contrast="on"] {
-  --text-light: #2D2A26;
-  --text-muted: #4A443C;
-  --primary-text: #7A3A0C;
-  --secondary: #0E3B3E;
-  --line: rgba(60, 21, 24, 0.22);
-  --line-soft: rgba(60, 21, 24, 0.14);
+  /* Brown text & accents -> pure black. */
+  --text: #000000;
+  --text-light: #000000;
+  --text-muted: #000000;
+  --primary: #000000;
+  --primary-text: #000000;
+  --accent-1: #000000;
+  --accent-2: #000000;
+  --secondary: #000000;
+  /* Section / card / highlight backgrounds -> pure white. */
+  --bg: #FFFFFF;
+  --bg-soft: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --white: #FFFFFF;
+  /* Tint tokens derived from the brand colors -> neutral so faint fills
+     and pill hovers stay legible against the white surfaces. */
+  --primary-soft: rgba(0, 0, 0, 0.08);
+  --secondary-soft: rgba(0, 0, 0, 0.08);
+  --line: rgba(0, 0, 0, 0.42);
+  --line-soft: rgba(0, 0, 0, 0.28);
 }
 
 /* ===== Reset & Base ===== */
