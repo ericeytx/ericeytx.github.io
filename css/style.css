@@ -4,6 +4,8 @@
   --bg-soft: #EFE8D6;
   --bg-card: #FEFCF6;
   --primary: #B85E1A;
+  /* Darker primary for small text on light backgrounds (meets WCAG AA 4.5:1). */
+  --primary-text: #9A4A10;
   --primary-soft: rgba(184, 94, 26, 0.10);
   --secondary: #144E52;
   --secondary-soft: rgba(20, 78, 82, 0.10);
@@ -293,7 +295,7 @@ a:hover { color: var(--accent-2); }
   font-family: var(--font-body);
   font-size: 0.76rem;
   font-weight: 600;
-  color: var(--primary);
+  color: var(--primary-text);
   margin-bottom: 1.75rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -466,7 +468,7 @@ section {
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--primary);
+  color: var(--primary-text);
   margin-bottom: 1.1rem;
 }
 
@@ -817,7 +819,7 @@ a.portfolio-card:hover {
   font-weight: 600;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  color: var(--primary);
+  color: var(--primary-text);
   transition: gap var(--transition-fast), color var(--transition-fast);
 }
 
@@ -885,7 +887,7 @@ a.portfolio-card:hover .portfolio-link {
 
 .company-period {
   font-size: 0.82rem;
-  color: var(--primary);
+  color: var(--primary-text);
   font-weight: 600;
   letter-spacing: 0.03em;
   text-transform: uppercase;

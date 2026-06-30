@@ -45,8 +45,8 @@
     {
       "title": "Standard Motor Products Catalogs",
       "url": "https://standardbrand.com/ecatalog/",
-      "description": "A multi-brand, feature-rich automotive parts catalog.",
-      "tech": [".NET Blazor", ".NET Minimal API", "SASS", "Bootstrap", "Fluxor", "SQL Server"]
+      "description": "A multi-brand automotive parts catalog built as a Blazor/Razor component library for Umbraco CMS, soon serving 10 brands—backed by analytics and a high-volume asset API that auto-watermarks static and 360° spinnable images.",
+      "tech": [".NET Blazor", ".NET Minimal API", "SASS", "Bootstrap", "Fluxor", "SQL Server", "Umbraco CMS"]
     },
     {
       "title": "This Résumé Page",
@@ -72,8 +72,8 @@
           "projects": [
             {
               "name": "Multi-Brand Catalog Platform",
-              "description": "Developed a multi-site, multi-brand, customer-facing catalog platform to a provided design, serving customers across multiple product lines.",
-              "tech": [".NET Blazor", ".NET Minimal API", "SASS", "Bootstrap", "Fluxor", "SQL Server"]
+              "description": "Developed a customer-facing, multi-brand catalog platform to a provided design—a Blazor/Razor component library for Umbraco CMS, soon serving 10 brands. Built supporting analytics and a high-volume asset API that auto-watermarks static and 360° spinnable images.",
+              "tech": [".NET Blazor", ".NET Minimal API", "SASS", "Bootstrap", "Fluxor", "SQL Server", "Umbraco CMS"]
             },
             {
               "name": "Corporate Development Standards",
