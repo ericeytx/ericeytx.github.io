@@ -1,6 +1,7 @@
 // ===== Portfolio Site - Main Script =====
 
 document.addEventListener('DOMContentLoaded', () => {
+  initAccessibility();
   initNav();
   initScrollProgress();
   initSmoothScroll();
@@ -8,6 +9,110 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactForm();
   loadPortfolioData();
 });
+
+// ===== Accessibility Controls (text size + high contrast) =====
+function initAccessibility() {
+  const STORAGE_KEY = 'a11y-prefs';
+  const root = document.documentElement;
+  const toggle = document.getElementById('a11y-toggle');
+  const panel = document.getElementById('a11y-panel');
+  if (!toggle || !panel) return;
+
+  const textButtons = panel.querySelectorAll('[data-a11y-text]');
+  const contrastButtons = panel.querySelectorAll('[data-a11y-contrast]');
+  const resetButton = document.getElementById('a11y-reset');
+
+  // Current preferences (defaults).
+  let prefs = { text: 'normal', contrast: 'off' };
+
+  // Reflect prefs onto the document and the buttons' pressed state.
+  const apply = () => {
+    if (prefs.text === 'normal') {
+      root.removeAttribute('data-a11y-text');
+    } else {
+      root.setAttribute('data-a11y-text', prefs.text);
+    }
+    if (prefs.contrast === 'on') {
+      root.setAttribute('data-a11y-contrast', 'on');
+    } else {
+      root.removeAttribute('data-a11y-contrast');
+    }
+    textButtons.forEach(btn => {
+      btn.setAttribute('aria-pressed', btn.dataset.a11yText === prefs.text ? 'true' : 'false');
+    });
+    contrastButtons.forEach(btn => {
+      btn.setAttribute('aria-pressed', btn.dataset.a11yContrast === prefs.contrast ? 'true' : 'false');
+    });
+  };
+
+  const save = () => {
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(prefs)); } catch (e) { /* ignore */ }
+  };
+
+  // Restore any saved preferences.
+  try {
+    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
+    if (saved && typeof saved === 'object') {
+      if (saved.text === 'large' || saved.text === 'larger') prefs.text = saved.text;
+      if (saved.contrast === 'on') prefs.contrast = saved.contrast;
+    }
+  } catch (e) { /* ignore */ }
+  apply();
+
+  // Open/close the panel.
+  const setPanelOpen = (open) => {
+    panel.hidden = !open;
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  };
+  setPanelOpen(false);
+
+  toggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    setPanelOpen(panel.hidden);
+  });
+
+  // Text-size buttons.
+  textButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      prefs.text = btn.dataset.a11yText;
+      apply();
+      save();
+    });
+  });
+
+  // Contrast buttons.
+  contrastButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      prefs.contrast = btn.dataset.a11yContrast;
+      apply();
+      save();
+    });
+  });
+
+  // Reset to defaults.
+  if (resetButton) {
+    resetButton.addEventListener('click', () => {
+      prefs = { text: 'normal', contrast: 'off' };
+      apply();
+      save();
+    });
+  }
+
+  // Close on outside click.
+  document.addEventListener('click', (e) => {
+    if (!panel.hidden && !panel.contains(e.target) && e.target !== toggle && !toggle.contains(e.target)) {
+      setPanelOpen(false);
+    }
+  });
+
+  // Close on Escape and return focus to the toggle.
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !panel.hidden) {
+      setPanelOpen(false);
+      toggle.focus();
+    }
+  });
+}
 
 // ===== Scroll Progress Bar =====
 function initScrollProgress() {

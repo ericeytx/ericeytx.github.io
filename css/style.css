@@ -12,7 +12,8 @@
   --accent-1: #3C1518;
   --accent-2: #69140E;
   --text: #2D2A26;
-  --text-light: #6B645C;
+  /* Slightly darkened from #6B645C for stronger default body-copy contrast. */
+  --text-light: #5E574F;
   --text-muted: #7A7268;
   --line: rgba(60, 21, 24, 0.10);
   --line-soft: rgba(60, 21, 24, 0.06);
@@ -30,6 +31,23 @@
   --transition-fast: 0.22s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+/* ===== Accessibility Mode Overrides ===== */
+/* Text-size control: scales the root font-size so every rem-based size
+   on the page grows proportionally and uniformly. */
+html[data-a11y-text="large"]  { font-size: 112.5%; } /* ~18px */
+html[data-a11y-text="larger"] { font-size: 125%;   } /* ~20px */
+
+/* High-contrast control: darkens body/secondary text tokens to push
+   contrast toward AAA while keeping the site's brand palette. */
+html[data-a11y-contrast="on"] {
+  --text-light: #2D2A26;
+  --text-muted: #4A443C;
+  --primary-text: #7A3A0C;
+  --secondary: #0E3B3E;
+  --line: rgba(60, 21, 24, 0.22);
+  --line-soft: rgba(60, 21, 24, 0.14);
+}
+
 /* ===== Reset & Base ===== */
 *, *::before, *::after {
   margin: 0;
@@ -40,11 +58,16 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: var(--nav-height);
+  /* Guard against page-level horizontal scrolling caused by off-screen
+     third-party widgets (e.g. hCaptcha tooltip arrows positioned at a
+     negative left). `body` already hides its own overflow, but injected
+     nodes report on the root element, so clip here too. */
+  overflow-x: hidden;
 }
 
 body {
   font-family: var(--font-body);
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.7;
   letter-spacing: -0.011em;
   color: var(--text);
@@ -245,6 +268,114 @@ a:hover { color: var(--accent-2); }
 #nav-toggle.active span:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
 }
+
+/* ===== Accessibility Control ===== */
+.nav-a11y {
+  position: relative;
+  margin-left: auto;
+  margin-right: 0.5rem;
+}
+
+.a11y-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: 1px solid var(--line-soft);
+  border-radius: 50%;
+  background: var(--bg-card);
+  color: var(--accent-1);
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: color var(--transition-fast), background var(--transition-fast), border-color var(--transition-fast);
+}
+
+.a11y-toggle:hover,
+.a11y-toggle[aria-expanded="true"] {
+  color: var(--bg);
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.a11y-panel {
+  position: absolute;
+  top: calc(100% + 0.6rem);
+  right: 0;
+  width: 14.375rem;
+  padding: 1.1rem 1.2rem;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  z-index: 1200;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.a11y-panel[hidden] { display: none; }
+
+.a11y-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.a11y-group-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.a11y-options {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.a11y-option {
+  flex: 1 1 auto;
+  padding: 0.45rem 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-light);
+  background: var(--bg);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: color var(--transition-fast), background var(--transition-fast), border-color var(--transition-fast);
+}
+
+.a11y-option:hover {
+  border-color: var(--primary-soft);
+  color: var(--accent-1);
+}
+
+.a11y-option[aria-pressed="true"] {
+  color: var(--bg);
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.a11y-reset {
+  align-self: flex-start;
+  padding: 0;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--primary-text);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.a11y-reset:hover { color: var(--secondary); }
 
 /* ===== Hero Section ===== */
 #hero {
@@ -527,9 +658,9 @@ section {
 }
 
 .about-card p {
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   line-height: 1.75;
-  color: var(--text);
+  color: var(--text-light);
   margin-bottom: 1.5rem;
   position: relative;
 }
@@ -719,7 +850,7 @@ section {
 }
 
 .project-desc {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: var(--text-light);
   margin-bottom: 0.75rem;
   line-height: 1.6;
@@ -785,7 +916,7 @@ a.portfolio-card:hover {
 }
 
 .portfolio-desc {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: var(--text-light);
   line-height: 1.65;
 }
@@ -1023,7 +1154,7 @@ a.portfolio-card:hover .portfolio-link {
 }
 
 .edu-credential {
-  font-size: 0.92rem;
+  font-size: 1rem;
   color: var(--text-light);
   margin-bottom: 0.35rem;
 }
@@ -1047,7 +1178,7 @@ a.portfolio-card:hover .portfolio-link {
   position: relative;
   padding-left: 1.4rem;
   margin-bottom: 0.85rem;
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: var(--text-light);
   line-height: 1.55;
 }
@@ -1305,7 +1436,49 @@ footer p {
 
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
-  #nav-toggle { display: block; }
+  /* On mobile the row is: logo | (spacer) | a11y | hamburger.
+     `.nav-logo` takes the auto margin so it stays pinned left and ALL free
+     space collapses to its right, pushing the a11y group + hamburger together
+     to the right edge. The hamburger is given the largest order so it is
+     always the right-most element, with a small gap from the a11y toggle.
+     Note: we must reset the base `.nav-a11y { margin-left:auto }` here,
+     otherwise two competing auto margins would split the free space and
+     strand the a11y toggle in the middle of the bar. */
+  .nav-logo {
+    margin-right: auto;
+    order: 1;
+  }
+
+  .nav-a11y {
+    order: 2;
+    margin-left: 0;
+    margin-right: 0.6rem;
+  }
+
+  #nav-toggle {
+    display: block;
+    order: 3;
+    margin-left: 0;
+  }
+
+  .a11y-toggle {
+    width: 2.375rem;
+    height: 2.375rem;
+  }
+
+  /* Anchor the popover to the viewport (not the toggle) and pin it to BOTH
+     side insets so it can never overflow the right edge on narrow screens.
+     Using left + right (instead of width) lets the browser size the panel to
+     the available space, and max-width keeps it from getting too wide on
+     larger phones/tablets. The 5vw insets match the nav container margins. */
+  .a11y-panel {
+    position: fixed;
+    top: var(--nav-height);
+    left: auto;
+    right: 5vw;
+    max-width: min(14.375rem, calc(100vw - 10vw));
+    width: auto;
+  }
 
   section {
     padding: 3.5rem 0;

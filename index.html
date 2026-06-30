@@ -17,6 +17,29 @@
   <nav id="navbar" aria-label="Primary">
     <div class="nav-inner">
       <a href="#hero" class="nav-logo" aria-label="EE — Home">EE</a>
+      <div class="nav-a11y">
+        <button id="a11y-toggle" type="button" class="a11y-toggle" aria-label="Accessibility options" aria-haspopup="true" aria-expanded="false" aria-controls="a11y-panel">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="4" r="1.6"/><path d="M3.5 7.5h17M12 7.5v6m0 0l-3.5 7m3.5-7l3.5 7"/></svg>
+        </button>
+        <div id="a11y-panel" class="a11y-panel" role="dialog" aria-label="Accessibility options" hidden>
+          <div class="a11y-group" role="group" aria-label="Text size">
+            <span class="a11y-group-label">Text size</span>
+            <div class="a11y-options">
+              <button type="button" class="a11y-option" data-a11y-text="normal" aria-pressed="true">Normal</button>
+              <button type="button" class="a11y-option" data-a11y-text="large" aria-pressed="false">Large</button>
+              <button type="button" class="a11y-option" data-a11y-text="larger" aria-pressed="false">Larger</button>
+            </div>
+          </div>
+          <div class="a11y-group" role="group" aria-label="Contrast">
+            <span class="a11y-group-label">Contrast</span>
+            <div class="a11y-options">
+              <button type="button" class="a11y-option" data-a11y-contrast="off" aria-pressed="true">Normal</button>
+              <button type="button" class="a11y-option" data-a11y-contrast="on" aria-pressed="false">High</button>
+            </div>
+          </div>
+          <button type="button" id="a11y-reset" class="a11y-reset">Reset</button>
+        </div>
+      </div>
       <button id="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">
         <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
       </button>
