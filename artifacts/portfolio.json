@@ -51,7 +51,7 @@
     {
       "title": "This Résumé Page",
       "url": "https://github.com/ericeytx/ericeytx.github.io",
-      "description": "Vanilla HTML with JavaScript touches.",
+      "description": "A framework-free single-page résumé site, rendered dynamically from JSON with GSAP-powered scroll animations.",
       "tech": ["HTML", "CSS", "JavaScript", "GSAP" ]
     }
   ],
