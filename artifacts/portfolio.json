@@ -2,7 +2,7 @@
   "meta": {
     "title": "Eric Eysermans | Full Stack Web Developer",
     "description": "Full Stack Web Developer specializing in .NET & Azure, modern web and cross-platform mobile development, and practical AI/ML integration.",
-    "favicon": "💻"
+    "favicon": "EE"
   },
   "person": {
     "name": "Eric Eysermans",
@@ -11,7 +11,7 @@
     "heroTagline": "Building software that makes everyday work faster, simpler, and a little more human.",
     "location": "Denton, Texas",
     "linkedin": "https://www.linkedin.com/in/ericeysermans/",
-    "summary": "Full stack web developer and engineering leader with 20+ years in .NET, Azure, and process automation, building software that makes everyday work faster and easier. From modern web and cross-platform mobile to pragmatic AI/ML, I've delivered solutions across engineering & manufacturing, accounting & finance, and sales & marketing—favoring clean architecture, maintainable code, and close collaboration."
+    "summary": "Full stack web developer and engineering leader with 20+ years in .NET, Azure, and process automation, building software that makes everyday work faster and easier. From modern web and cross-platform mobile to pragmatic AI/ML, I've delivered solutions across engineering & manufacturing, accounting & finance, and sales & marketing—favoring clean architecture, maintainable code, and close collaboration. Above all, I love mentoring developers and growing skills across a team, helping the people around me do their best work."
   },
   "highlights": [
     { "label": "Years in Tech", "value": "20+" },
